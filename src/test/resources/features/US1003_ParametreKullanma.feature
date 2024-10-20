@@ -6,7 +6,7 @@
       When arama kutusuna "baby" yazip aratir
       Then arama sonucunda urun bulunabildigini test eder
       And 3 saniye bekler
-      And sayfayi kapatir
+
 
     @E2E
     Scenario: TC08 kullanici testotomasyonu sitesinde samsung aratip sonuc bulabilmeli
@@ -14,10 +14,9 @@
       When arama kutusuna "samsung" yazip aratir
       Then arama sonucunda urun bulunabildigini test eder
       And 2 saniye bekler
-      And sayfayi kapatir
+
 
     Scenario: TC09 kullanici testotomasyonu sitesinde backpack aratip sonuc bulabilmeli
       Given kullanici testotomasyonu anasayfaya gider
       Then arama kutusuna "backpack" yazip aratir
       And arama sonucunda urun bulunabildigini test eder
-      And sayfayi kapatir

@@ -10,7 +10,7 @@
       And password olarak configuration dosyasindan "toGecerliPassword" girer
       And signIn butonuna basar
       Then basarili olarak giris yapilamadigini test eder
-      And sayfayi kapatir
+
 
     @E2E
     Scenario: TC12 Kullanici gecerli email ve gecersiz password ile sisteme giris yapamamali
@@ -20,7 +20,7 @@
       And password olarak configuration dosyasindan "toGecersizPassword" girer
       Then signIn butonuna basar
       And basarili olarak giris yapilamadigini test eder
-      And sayfayi kapatir
+
 
     @E2E
     Scenario: TC13 Kullanici gecersiz email ve gecersiz password ile sisteme giris yapamamali
@@ -30,4 +30,3 @@
       And password olarak configuration dosyasindan "toGecersizPassword" girer
       Then signIn butonuna basar
       And basarili olarak giris yapilamadigini test eder
-      And sayfayi kapatir

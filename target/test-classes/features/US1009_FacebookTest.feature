@@ -8,4 +8,4 @@
       Then facebook cookies kabul eder
       And facebook sayfasinda oldugunu test eder
       Then 3 saniye bekler
-
+      And sayfayi kapatir

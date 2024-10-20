@@ -7,7 +7,7 @@
       Given kullanici testotomasyonu anasayfaya gider
       Then arama kutusuna "<aranacakUrun>" yazip aratir
       And arama sonucunda urun bulunabildigini test eder
-      Then sayfayi kapatir
+
 
     Examples:
       |aranacakUrun|

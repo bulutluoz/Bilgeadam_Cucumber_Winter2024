@@ -11,7 +11,7 @@
       Then signIn butonuna basar
       And basarili olarak giris yapilamadigini test eder
       Then 3 saniye bekler
-      And sayfayi kapatir
+
 
     Examples:
     |direktEmail      |direktPassword |

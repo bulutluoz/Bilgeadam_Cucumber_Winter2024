@@ -12,4 +12,3 @@
       And basarili giris yapilabildigini test eder
       And 3 saniye bekler
       Then logout linkini tiklayip sistemden cikar
-      And sayfayi kapatir
