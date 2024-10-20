@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import pages.TestotomasyonuPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class TestotomasyonuStepdefinitions {
 
@@ -39,5 +40,27 @@ public class TestotomasyonuStepdefinitions {
     @Then("sayfayi kapatir")
     public void sayfayi_kapatir() {
         Driver.quitDriver();
+    }
+
+    @When("arama kutusuna dress yazip aratir")
+    public void aramaKutusunaDressYazipAratir() {
+        testotomasyonuPage.aramaKutusu.sendKeys("dress" + Keys.ENTER);
+    }
+
+    @Then("arama kutusuna apple yazip aratir")
+    public void aramaKutusunaAppleYazipAratir() {
+        testotomasyonuPage.aramaKutusu.sendKeys("apple" + Keys.ENTER);
+    }
+
+    @When("arama kutusuna {string} yazip aratir")
+    public void aramaKutusunaYazipAratir(String aranacakKelime) {
+
+        testotomasyonuPage.aramaKutusu.sendKeys(aranacakKelime + Keys.ENTER);
+    }
+
+    @And("{int} saniye bekler")
+    public void saniyeBekler(int saniye) {
+
+        ReusableMethods.bekle(saniye);
     }
 }
