@@ -5,8 +5,8 @@
 
       Given kullanici testotomasyonu anasayfaya gider
       When account butonuna basar
-      Then email olarak "toGecersizEmail" girer
-      And password olarak "toGecerliPassword" girer
+      Then email olarak configuration dosyasindan "toGecersizEmail" girer
+      And password olarak configuration dosyasindan "toGecerliPassword" girer
       And signIn butonuna basar
       Then basarili olarak giris yapilamadigini test eder
       And sayfayi kapatir
@@ -15,8 +15,8 @@
     Scenario: TC12 Kullanici gecerli email ve gecersiz password ile sisteme giris yapamamali
       Given kullanici testotomasyonu anasayfaya gider
       When account butonuna basar
-      And email olarak "toGecerliEmail" girer
-      And password olarak "toGecersizPassword" girer
+      And email olarak configuration dosyasindan "toGecerliEmail" girer
+      And password olarak configuration dosyasindan "toGecersizPassword" girer
       Then signIn butonuna basar
       And basarili olarak giris yapilamadigini test eder
       And sayfayi kapatir
@@ -25,8 +25,8 @@
     Scenario: TC13 Kullanici gecersiz email ve gecersiz password ile sisteme giris yapamamali
       Given kullanici testotomasyonu anasayfaya gider
       When account butonuna basar
-      And email olarak "toGecersizEmail" girer
-      And password olarak "toGecersizPassword" girer
+      And email olarak configuration dosyasindan "toGecersizEmail" girer
+      And password olarak configuration dosyasindan "toGecersizPassword" girer
       Then signIn butonuna basar
       And basarili olarak giris yapilamadigini test eder
       And sayfayi kapatir

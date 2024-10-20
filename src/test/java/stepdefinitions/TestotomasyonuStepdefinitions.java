@@ -68,17 +68,8 @@ public class TestotomasyonuStepdefinitions {
     public void account_butonuna_basar() {
        testotomasyonuPage.accountLinki.click();
     }
-    @Then("email olarak {string} girer")
-    public void email_olarak_girer(String configurationMail) {
-        // toGecerliEmail
-        testotomasyonuPage.loginSayfasiEmailKutusu.sendKeys(ConfigReader.getProperty(configurationMail));
 
-    }
-    @Then("password olarak {string} girer")
-    public void password_olarak_girer(String configurationPasswordTuru) {
-        // toGecerliEmail
-        testotomasyonuPage.loginSayfasiPasswordKutusu.sendKeys(ConfigReader.getProperty(configurationPasswordTuru));
-    }
+
     @Then("signIn butonuna basar")
     public void sign_in_butonuna_basar() {
 
@@ -100,5 +91,28 @@ public class TestotomasyonuStepdefinitions {
     public void basariliOlarakGirisYapilamadiginiTestEder() {
 
         Assertions.assertTrue(testotomasyonuPage.loginSayfasiEmailKutusu.isDisplayed());
+    }
+
+    @Then("email olarak configuration dosyasindan {string} girer")
+    public void emailOlarakConfigurationDosyasindanGirer(String configurationMail) {
+        testotomasyonuPage.loginSayfasiEmailKutusu.sendKeys(ConfigReader.getProperty(configurationMail));
+
+    }
+
+    @And("password olarak configuration dosyasindan {string} girer")
+    public void passwordOlarakConfigurationDosyasindanGirer(String configurationPasswordTuru) {
+        testotomasyonuPage.loginSayfasiPasswordKutusu.sendKeys(ConfigReader.getProperty(configurationPasswordTuru));
+
+    }
+
+    @Then("email olarak direkt {string} girer")
+    public void emailOlarakDirektGirer(String email) {
+
+        testotomasyonuPage.loginSayfasiEmailKutusu.sendKeys(email);
+    }
+
+    @And("password olarak direkt {string} girer")
+    public void passwordOlarakDirektGirer(String password) {
+        testotomasyonuPage.loginSayfasiPasswordKutusu.sendKeys(password);
     }
 }
