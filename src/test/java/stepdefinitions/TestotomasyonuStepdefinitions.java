@@ -115,4 +115,30 @@ public class TestotomasyonuStepdefinitions {
     public void passwordOlarakDirektGirer(String password) {
         testotomasyonuPage.loginSayfasiPasswordKutusu.sendKeys(password);
     }
+
+    @Then("testotomasyonu anasayfada oldugunu test eder")
+    public void testotomasyonu_anasayfada_oldugunu_test_eder() {
+        // actual url'in configuration dosyasindaki ile ayni oldugunu test edelim
+
+        String expectedUrl = ConfigReader.getProperty("toUrl");
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+
+        Assertions.assertNotEquals(expectedUrl,actualUrl);
+    }
+    @Then("bulunan urunlerden ilkini tiklar")
+    public void bulunan_urunlerden_ilkini_tiklar() {
+
+        testotomasyonuPage.bulunanUrunElementleriList.get(0).click();
+
+    }
+    @Then("acilan sayfada urun isminde case sensitive olmadan {string} bulundugunu test eder")
+    public void acilan_sayfada_urun_isminde_case_sensitive_olmadan_bulundugunu_test_eder(String expectedIsimIcerik) {
+
+        String actualIlkUrunIsmi = testotomasyonuPage.ilkUrunSayfasindakiIsimElementi
+                                                        .getText()
+                                                        .toLowerCase();
+
+        Assertions.assertTrue(actualIlkUrunIsmi.contains(expectedIsimIcerik));
+    }
+
 }

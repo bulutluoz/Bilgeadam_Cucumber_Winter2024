@@ -8,7 +8,7 @@
       And 3 saniye bekler
       And sayfayi kapatir
 
-
+    @E2E
     Scenario: TC08 kullanici testotomasyonu sitesinde samsung aratip sonuc bulabilmeli
       Given kullanici testotomasyonu anasayfaya gider
       When arama kutusuna "samsung" yazip aratir

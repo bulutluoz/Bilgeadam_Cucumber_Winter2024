@@ -1,4 +1,5 @@
 
+  @E2E
   Feature: US1006 verilen toplu kullanici email ve password degerleri ile giris yapilamaz
 
     Scenario Outline: TC14 verilen listedeki bilgilerle giris yapilamamali
