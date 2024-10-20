@@ -63,4 +63,42 @@ public class TestotomasyonuStepdefinitions {
 
         ReusableMethods.bekle(saniye);
     }
+
+    @Then("account butonuna basar")
+    public void account_butonuna_basar() {
+       testotomasyonuPage.accountLinki.click();
+    }
+    @Then("email olarak {string} girer")
+    public void email_olarak_girer(String configurationMail) {
+        // toGecerliEmail
+        testotomasyonuPage.loginSayfasiEmailKutusu.sendKeys(ConfigReader.getProperty(configurationMail));
+
+    }
+    @Then("password olarak {string} girer")
+    public void password_olarak_girer(String configurationPasswordTuru) {
+        // toGecerliEmail
+        testotomasyonuPage.loginSayfasiPasswordKutusu.sendKeys(ConfigReader.getProperty(configurationPasswordTuru));
+    }
+    @Then("signIn butonuna basar")
+    public void sign_in_butonuna_basar() {
+
+        testotomasyonuPage.loginSayfasiSignInButonu.click();
+
+    }
+    @Then("basarili giris yapilabildigini test eder")
+    public void basarili_giris_yapilabildigini_test_eder() {
+
+        Assertions.assertTrue( testotomasyonuPage.logoutLinki.isDisplayed());
+    }
+
+    @Then("logout linkini tiklayip sistemden cikar")
+    public void logoutLinkiniTiklayipSistemdenCikar() {
+        testotomasyonuPage.logoutLinki.click();
+    }
+
+    @Then("basarili olarak giris yapilamadigini test eder")
+    public void basariliOlarakGirisYapilamadiginiTestEder() {
+
+        Assertions.assertTrue(testotomasyonuPage.loginSayfasiEmailKutusu.isDisplayed());
+    }
 }

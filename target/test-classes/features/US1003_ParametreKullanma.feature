@@ -13,6 +13,7 @@
       Given kullanici testotomasyonu anasayfaya gider
       When arama kutusuna "samsung" yazip aratir
       Then arama sonucunda urun bulunabildigini test eder
+      And 2 saniye bekler
       And sayfayi kapatir
 
     Scenario: TC09 kullanici testotomasyonu sitesinde backpack aratip sonuc bulabilmeli
