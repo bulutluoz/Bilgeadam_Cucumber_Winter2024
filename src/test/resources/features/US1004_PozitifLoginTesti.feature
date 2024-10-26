@@ -1,5 +1,5 @@
 
-  @smoke
+  @smoke @paralel1
   Feature: US1004 kullanici gecerli bilgilerle sisteme giris yapar
 
     Scenario: TC10 kullanici gecerli email ve password ile giris yapabilmeli

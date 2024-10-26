@@ -21,14 +21,12 @@
             <artifactId>selenium-java</artifactId>
             <version>4.25.0</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>7.20.1</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-suite -->
         <dependency>
             <groupId>org.junit.platform</groupId>
@@ -36,7 +34,6 @@
             <version>1.10.3</version>
             <scope>test</scope>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit-platform-engine -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -44,7 +41,6 @@
             <version>7.18.1</version>
             <scope>test</scope>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -52,21 +48,18 @@
             <version>5.11.2</version>
             <scope>test</scope>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>5.3.0</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -75,5 +68,80 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>5.8.2</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>cucumber-jvm-example</projectName>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <inputDirectory>${project.build.directory}</inputDirectory>
+                            <jsonFiles>
+                                <param>**/json-reports/*.json</param>
+                                <!-- Bu plugin json-reports klasoru altindaki
+                                     uzantisi .json olan dosyayi kullanarak
+                                     daha guzel rapor olusturur
+                                     Calistigimiz projede json raporlarinin
+                                     konuldugu klasor ismini veya json dosya ismini degistirirsek
+                                     o zaman 97.satirda dogru dosyayi gostermeliyiz
+                                      -->
+                            </jsonFiles><classificationFiles>->
+                            <param>sample.properties</param>
+                            <param>other.properties</param>
+                        </classificationFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin> <!-- Raporlama yapiyor , json-reports klasoru altindaki json dosyalarini kullanir-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <skipTests>false</skipTests>
+                    <includes>
+                        <include>**/runners/*Runner*.java</include>
+                        <!-- runners package altinda
+                             calismasini istedigimiz Runner'larin
+                             isimlerindeki ortak bolumu yaziyoruz-->
+                    </includes>
+                </configuration>
+            </plugin>  <!-- bir method fail olsa bile geriye kalan method'larin calismaya devam etmesi icin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <configuration>
+                    <parallel>classes</parallel>
+                    <forkMode>perthread</forkMode>
+                    <threadCount>1</threadCount> <!-- Ayni anda calisacak thread sayisi -->
+                    <reuseForks>false</reuseForks>
+                    <argLine>-Duser.language=en</argLine>
+                    <argLine>-Xmx1024m</argLine>
+                    <argLine>-XX:MaxPermSize=256m</argLine>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <useFile>false</useFile>
+                    <includes>
+                        <include>**/runners/*Runner*.java</include>
+                        <!-- runners package altinda
+                             calismasini istedigimiz Runner'larin
+                             isimlerindeki ortak bolumu yaziyoruz-->
+                    </includes>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin> <!-- Paralel calismayi organize ediyor -->
+        </plugins>
+    </build>
 
 </project>

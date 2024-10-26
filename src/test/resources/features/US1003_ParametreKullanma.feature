@@ -8,14 +8,14 @@
       And 3 saniye bekler
 
 
-    @E2E
+    @E2E @paralel1
     Scenario: TC08 kullanici testotomasyonu sitesinde samsung aratip sonuc bulabilmeli
       Given kullanici testotomasyonu anasayfaya gider
       When arama kutusuna "samsung" yazip aratir
       Then arama sonucunda urun bulunabildigini test eder
       And 2 saniye bekler
 
-
+    @paralel2
     Scenario: TC09 kullanici testotomasyonu sitesinde backpack aratip sonuc bulabilmeli
       Given kullanici testotomasyonu anasayfaya gider
       Then arama kutusuna "backpack" yazip aratir

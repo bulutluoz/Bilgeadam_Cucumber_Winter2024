@@ -1,7 +1,7 @@
 
   Feature: US1008 kullanici detayli arama yapar
 
-    @WIP
+    @WIP @paralel2
     Scenario: TC16 kullanici sayfaya gidip verilen urunu bulabilmeli
 
       Given kullanici configuration dosyasindaki "toUrl" anasayfaya gider

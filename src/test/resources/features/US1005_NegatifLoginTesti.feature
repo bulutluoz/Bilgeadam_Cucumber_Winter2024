@@ -1,5 +1,5 @@
 
-  @smoke
+  @smoke @paralel2
   Feature: US1005 kullanici gecersiz bilgilerle sisteme giremez
 
     Scenario: TC11 Kullanici gecersiz email, gecerli password ile sisteme giris yapamamali

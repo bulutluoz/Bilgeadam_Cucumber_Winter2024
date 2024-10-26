@@ -7,13 +7,13 @@
       Then arama sonucunda urun bulunabildigini test eder
 
 
-
+    @paralel1
     Scenario: TC02 kullanici testotomasyonu sitesinde dress aratip sonuc bulabilmeli
       Given kullanici testotomasyonu anasayfaya gider
       When arama kutusuna dress yazip aratir
       Then arama sonucunda urun bulunabildigini test eder
 
-
+    @paralel2
     Scenario: TC03 kullanici testotomasyonu sitesinde apple aratip sonuc bulabilmeli
       Given kullanici testotomasyonu anasayfaya gider
       Then arama kutusuna apple yazip aratir
