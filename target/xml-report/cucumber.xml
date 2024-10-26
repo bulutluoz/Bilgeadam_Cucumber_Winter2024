@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="5.906" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="US1008 kullanici detayli arama yapar" name="TC16 kullanici sayfaya gidip verilen urunu bulabilmeli" time="5.8">
+<system-out><![CDATA[
+Given kullanici configuration dosyasindaki "toUrl" anasayfaya gider.........passed
+Then testotomasyonu anasayfada oldugunu test eder...........................passed
+When arama kutusuna "phone" yazip aratir....................................passed
+And arama sonucunda urun bulunabildigini test eder..........................passed
+Then bulunan urunlerden ilkini tiklar.......................................passed
+And 1 saniye bekler.........................................................passed
+And acilan sayfada urun isminde case sensitive olmadan "phone" bulundugunu test eder.passed
+]]></system-out>
+</testcase>
+</testsuite>

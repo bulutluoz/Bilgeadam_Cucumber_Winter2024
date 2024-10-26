@@ -1,0 +1,12 @@
+stepdefinitions/Hooks.class
+runners/ParalelRun1.class
+pages/WebUniPage.class
+runners/ParalelRun2.class
+utilities/Driver.class
+pages/TestotomasyonuPage.class
+utilities/ReusableMethods.class
+stepdefinitions/TestotomasyonuStepdefinitions.class
+runners/Runner.class
+stepdefinitions/FacebookStepdefinitions.class
+pages/FacebookPage.class
+utilities/ConfigReader.class

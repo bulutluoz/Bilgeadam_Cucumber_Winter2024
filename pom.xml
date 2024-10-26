@@ -87,13 +87,13 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-                                <param>**/json-reports/*.json</param>
+                                <param>**/json_reports/*.json</param>
                                 <!-- Bu plugin json-reports klasoru altindaki
                                      uzantisi .json olan dosyayi kullanarak
                                      daha guzel rapor olusturur
                                      Calistigimiz projede json raporlarinin
                                      konuldugu klasor ismini veya json dosya ismini degistirirsek
-                                     o zaman 97.satirda dogru dosyayi gostermeliyiz
+                                     o zaman 90.satirda dogru dosyayi gostermeliyiz
                                       -->
                             </jsonFiles><classificationFiles>->
                             <param>sample.properties</param>
